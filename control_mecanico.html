@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROCOM - Control Mecánico</title>
+    <!-- Cargamos los estilos locales de Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- CORREGIDO: Enlace oficial completo de los iconos de Bootstrap -->
+   <link rel="stylesheet" href="css/bootstrap-icons.min.css">
+
+    <style>
+        .navbar-custom { background-color: #1e293b; }
+    </style>
+</head>
+
+<body class="bg-light">
+
+    <!-- BARRA SUPERIOR -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom shadow-sm mb-4">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand fw-bold" href="dashboard.html"><i class="bi bi-shield-lock-fill me-2"></i>PROCOM <span class="fw-light text-muted">| Gestión</span></a>
+            <a href="dashboard.html" class="btn btn-outline-light btn-sm"><i class="bi bi-arrow-left me-1"></i> Volver al Panel</a>
+        </div>
+    </nav>
+
+    <!-- CUERPO PRINCIPAL -->
+    <div class="container px-4 mb-5">
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800 fw-bold">Bitácora de Fallas y Talleres</h1>
+            <span class="badge bg-secondary p-2">Módulo de Mantenimiento</span>
+        </div>
+
+        <!-- SECCIÓN DE FALLAS ACTIVAS (Aquí caerán los reportes de los choferes) -->
+        <div class="card shadow-sm mb-4 border-0">
+            <div class="card-header bg-white py-3 border-0">
+                <h6 class="m-0 fw-bold text-danger"><i class="bi bi-tools me-2"></i>Fallas Recientes por Atender</h6>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th class="ps-4">Fecha</th>
+                                <th>Vehículo</th>
+                                <th>Conductor</th>
+                                <th>Detalle de la Falla</th>
+                                <th>Prioridad</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="ps-4 text-muted small">Hoy, 09:30 AM</td>
+                                <td><strong>Nissan Versa</strong><br><small class="text-muted">ABC-987-B</small></td>
+                                <td>Jorge Gómez</td>
+                                <td><span>"El pedal del freno se siente muy blando y rechina la llanta delantera izquierda..."</span></td>
+                                <td><span class="badge bg-danger">CRÍTICA (Parar Auto)</span></td>
+                                <td><button class="btn btn-sm btn-dark" onclick="alert('Generando orden de trabajo para el taller mecánico...');">Mandar a Taller</button></td>
+                            </tr>
+                            <tr>
+                                <td class="ps-4 text-muted small">Ayer, 04:15 PM</td>
+                                <td><strong>Chevrolet Aveo</strong><br><small class="text-muted">XYZ-123-A</small></td>
+                                <td>Carlos Mendoza</td>
+                                <td><span>"Tiene un ruido extraño en la suspensión trasera al pasar los baches."</span></td>
+                                <td><span class="badge bg-warning text-dark">MEDIA (Revisión)</span></td>
+                                <td><button class="btn btn-sm btn-outline-secondary">Agendar Cita</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- HISTORIAL DE REPARACIONES CONCLUSAS -->
+        <div class="card shadow-sm border-0">
+            <div class="card-header bg-white py-3 border-0">
+                <h6 class="m-0 fw-bold text-success"><i class="bi bi-check-circle-fill me-2"></i>Historial de Servicios Concluidos</h6>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-striped mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th class="ps-4">Fecha Reparación</th>
+                                <th>Vehículo</th>
+                                <th>Servicio Realizado</th>
+                                <th>Costo</th>
+                                <th>Taller / Mecánico</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="ps-4 text-muted small">12 Oct 2026</td>
+                                <td>Chevrolet Aveo (XYZ-123-A)</td>
+                                <td>Cambio de aceite sintético 5W30 y filtro de aire por kilometraje.</td>
+                                <td class="fw-bold text-success">$1,250.00 MXN</td>
+                                <td>Taller "El Ingeniero"</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

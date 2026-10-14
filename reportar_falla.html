@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROCOM - Reportar Falla</title>
+    <!-- Cargamos los estilos locales de Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- CORREGIDO: Enlace oficial completo de los iconos de Bootstrap -->
+   <link rel="stylesheet" href="css/bootstrap-icons.min.css">
+
+    <style>
+        .navbar-conductor { background-color: #0f172a; }
+        .btn-submit-falla { background-color: #dc3545; border: none; }
+        .btn-submit-falla:hover { background-color: #bd2130; }
+    </style>
+</head>
+
+<body class="bg-light">
+
+    <!-- BARRA SUPERIOR MÓVIL -->
+    <nav class="navbar navbar-dark navbar-conductor shadow-sm mb-3">
+        <div class="container-fluid justify-content-center">
+            <span class="navbar-brand fw-bold mb-0 h1 text-center">
+                <i class="bi bi-exclamation-triangle-fill text-warning me-2"></i>PROCOM <span class="fw-light text-muted">| Conductores</span>
+            </span>
+        </div>
+    </nav>
+
+    <!-- FORMULARIO DE REPORTE MÓVIL -->
+    <div class="container px-3">
+        <div class="card shadow-sm border-0">
+            <div class="card-header bg-danger text-white py-3 text-center">
+                <h5 class="m-0 fw-bold"><i class="bi bi-shield-exclamation me-2"></i>Reporte de Falla Mecánica</h5>
+                <p class="small m-0 mt-1 opacity-75">Notifica fallas de inmediato para programar tu ingreso a taller.</p>
+            </div>
+            <div class="card-body p-3">
+                <!-- Simula el envío limpiando la pantalla y lanzando un aviso en el navegador -->
+                <form action="reportar_falla.html" onsubmit="alert('¡Reporte enviado con éxito a la administración de PROCOM!');">
+                    
+                    <!-- Selección de Vehículo -->
+                    <div class="mb-3">
+                        <label class="form-label small fw-bold text-secondary">Selecciona tu Vehículo</label>
+                        <select class="form-select form-select-lg" required>
+                            <option value="" selected disabled>¿Qué auto manejas hoy?...</option>
+                            <option value="1">Chevrolet Aveo (XYZ-123-A)</option>
+                            <option value="2">Nissan Versa (ABC-987-B)</option>
+                        </select>
+                    </div>
+
+                    <!-- Kilometraje actual -->
+                    <div class="mb-3">
+                        <label class="form-label small fw-bold text-secondary">Kilometraje Actual</label>
+                        <input type="number" class="form-control form-control-lg" placeholder="Ej. 45210" min="0" required>
+                    </div>
+
+                    <!-- Gravedad operativa -->
+                    <div class="mb-3">
+                        <label class="form-label small fw-bold text-secondary">Gravedad del Problema</label>
+                        <div class="row g-2">
+                            <div class="col-4">
+                                <input type="radio" class="btn-check" name="gravedad" id="baja" checked>
+                                <label class="btn btn-outline-success w-100 btn-sm py-2" for="baja">Baja<br><small class="text-muted">Aún rueda</small></label>
+                            </div>
+                            <div class="col-4">
+                                <input type="radio" class="btn-check" name="gravedad" id="media">
+                                <label class="btn btn-outline-warning w-100 btn-sm py-2" for="media">Media<br><small class="text-muted">Trae ruido</small></label>
+                            </div>
+                            <div class="col-4">
+                                <input type="radio" class="btn-check" name="gravedad" id="alta">
+                                <label class="btn btn-outline-danger w-100 btn-sm py-2" for="alta">Crítica<br><small class="text-muted">Parar auto</small></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Descripción de la avería -->
+                    <div class="mb-4">
+                        <label class="form-label small fw-bold text-secondary">Descripción de la Falla</label>
+                        <textarea class="form-control" rows="4" placeholder="Ej. Se deprime mucho el pedal del freno y rechina fuertemente la llanta delantera izquierda al intentar detener el auto..." required></textarea>
+                    </div>
+
+                    <!-- Botón de Envío -->
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-danger btn-lg btn-submit-falla shadow-sm fw-bold">
+                            <i class="bi bi-send-fill me-2"></i>Enviar Reporte a PROCOM
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <p class="text-center text-muted small mt-4">Sistema de Gestión PROCOM v1.0<br>Módulo Independiente de Conductores.</p>
+    </div>
+</body>
+</html>
