@@ -6,9 +6,8 @@
     <title>PROCOM - Control Mecánico</title>
     <!-- Cargamos los estilos locales de Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- CORREGIDO: Enlace oficial completo de los iconos de Bootstrap -->
-   <link rel="stylesheet" href="css/bootstrap-icons.min.css">
-
+    <!-- Servidor alternativo directo para que los iconos carguen en cualquier red sin bloquearse -->
+    <link rel="stylesheet" href="https://cloudflare.com">
     <style>
         .navbar-custom { background-color: #1e293b; }
     </style>
@@ -31,7 +30,7 @@
             <span class="badge bg-secondary p-2">Módulo de Mantenimiento</span>
         </div>
 
-        <!-- SECCIÓN DE FALLAS ACTIVAS (Aquí caerán los reportes de los choferes) -->
+        <!-- SECCIÓN DE FALLAS ACTIVAS -->
         <div class="card shadow-sm mb-4 border-0">
             <div class="card-header bg-white py-3 border-0">
                 <h6 class="m-0 fw-bold text-danger"><i class="bi bi-tools me-2"></i>Fallas Recientes por Atender</h6>
